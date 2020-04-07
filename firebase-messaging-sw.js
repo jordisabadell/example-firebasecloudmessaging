@@ -3,12 +3,12 @@
 
  var firebaseConfig = {
   apiKey: "<API_KEY>",
-  authDomain: "example-push-notification-2020.firebaseapp.com",
-  databaseURL: "https://example-push-notification-2020.firebaseio.com",
-  projectId: "example-push-notification-2020",
-  storageBucket: "example-push-notification-2020.appspot.com",
-  messagingSenderId: "601909066884",
-  appId: "1:601909066884:web:881ea7b3d83a2e625b96d1"
+  authDomain: "example-firebasecloudmsg-2020.firebaseapp.com",
+  databaseURL: "https://example-firebasecloudmsg-2020.firebaseio.com",
+  projectId: "example-firebasecloudmsg-2020",
+  storageBucket: "example-firebasecloudmsg-2020.appspot.com",
+  messagingSenderId: "545038372345",
+  appId: "1:545038372345:web:99a52df52369b9f056c128"
 };
 
 // Initialize Firebase.
