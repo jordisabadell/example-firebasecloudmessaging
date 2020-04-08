@@ -10,12 +10,15 @@ function copy() {
     var destination = 'public/';
 
     return gulp.src(sourceFiles)
-        .pipe(template({FCM_WEBAPIKEY: process.env.FCM_WEBAPIKEY}))
+        .pipe(template({
+            FCM_WEBAPIKEY: process.env.FCM_WEBAPIKEY,
+            FCM_SERVERKEY: process.env.FCM_SERVERKEY
+        }))
         .pipe(gulp.dest(destination));
 }
 
 function build(cb) {
-    console.log("Done!" + process.env.apikey);
+    console.log("Done! " + process.env.FCM_SERVERKEY) 
     cb();
 }
   

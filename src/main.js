@@ -29,7 +29,7 @@ messaging.onTokenRefresh(() => {
         resetUI();
 
     }).catch((err) => {
-        showToken('Unable to retrieve refreshed token ', err);
+        showMessage('#token', 'Unable to retrieve refreshed token ', err);
     });
 });
 
@@ -49,7 +49,8 @@ messaging.onMessage((payload) => {
  */
 function resetUI() {
     clearMessages();
-    showToken('loading...');
+    showMessage('#token', 'loading...');
+    showMessage('#subscription', "No subscribed.");
     
     // Get Instance ID token. Initially this makes a network call, once retrieved
     // subsequent calls to getToken will return from cache.
@@ -67,7 +68,7 @@ function resetUI() {
             setTokenSentToServer(false);
         }
     }).catch((err) => {
-        showToken('Error retrieving Instance ID token. ', err);
+        showMessage('#token', 'Error retrieving Instance ID token. ', err);
         setTokenSentToServer(false);
     });
 }
@@ -124,7 +125,7 @@ function deleteToken() {
             console.log('Unable to delete token. ', err);
         });
     }).catch((err) => {
-        showToken('Error retrieving Instance ID token. ', err);
+        showMessage('#token', 'Error retrieving Instance ID token. ', err);
     });
 }
 
@@ -144,23 +145,47 @@ function setTokenSentToServer(sent) {
 }
 
 /**
- * Show token in console and UI.
- * @param {string} currentToken 
+ * Subscribe to topic
+ * @param {string} topicName
+ */
+function subscribeToTopic(topicName) {
+    var token = document.querySelector('#token');
+
+    $.ajax("https://iid.googleapis.com/iid/v1/"+token.textContent+"/rel/topics/"+topicName, {
+        type: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "key=<%=FCM_SERVERKEY%>"
+        }
+    }).done(function (data) {
+        showMessage('#subscription', 'Subscription to topic \''+ topicName + '\' done!');
+
+    }).fail(function (xhr, status, error) {
+        showMessage('#subscription', 'Subscription to topic \''+ topicName + '\' error... ', error);
+    });
+}
+
+/**
+ * Show message in console and UI.
+ * @param {string} element
+ * @param {string} value 
  * @param {*} err
  */
-function showToken(currentToken, err) {
+function showMessage(element, value, err) {
 
-    var s = currentToken;
-    if(err!=undefined) {
-        s += ' Error: ' + err;
+    if(element!=undefined) {
+        var s = value;
+        if(err!=undefined) {
+            s += ' Error: ' + err;
+        }
+        console.log(s);
+
+        const tokenElement = document.querySelector(element);
+        tokenElement.textContent = s;
     }
-
-    // Console.
-    console.log(s);
-
-    // UI.
-    const tokenElement = document.querySelector('#token');
-    tokenElement.textContent = s;
+    else {
+        console.log("¿¿element??");
+    }
 }
 
 /**
@@ -170,7 +195,7 @@ function showToken(currentToken, err) {
 function showPushEnabled(currentToken) {
     showDiv('token_div');
     hideDiv('permission_div');
-    showToken(currentToken);
+    showMessage('#token', currentToken);
 }
 
 /**

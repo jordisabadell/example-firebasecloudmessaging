@@ -21,6 +21,7 @@
       <div id="token_div" style="display: none;">
         <h4>Instance ID Token</h4>
         <pre id="token"></pre>
+        <button onclick="copyToken()">Copy token</button>
         <button onclick="deleteToken()">Delete Token</button>
       </div>
 
@@ -30,12 +31,18 @@
         <button onclick="requestPermission()">Request Permission</button>
       </div>
 
-      <button onclick="copyToken()">Copy token</button>
-            
-      <div id="messages"></div>
+      <div>
+        <h4>Subscription</h4>
+        <pre id="subscription"></pre>
+        <input type="text" id="topicName" value="movies">
+        <button onclick="subscribeToTopic(document.getElementById('topicName').value)">Subscrive to topic</button>    
+      </div>
 
+      <div id="messages"></div>
     </main>
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
