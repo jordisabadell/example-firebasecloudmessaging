@@ -1,0 +1,27 @@
+{
+  "name": "example-firebasecloudmessaging",
+  "version": "1.0.0",
+  "description": "1. Add Firebase to your JavaScript project and configure Web Credentials with FCM. See \"how to do it\" at original example, https://firebase.google.com/docs/cloud-messaging/js/client\r 1. Add your **apiKey** value on **main.js** and **firebase-messaging-sw-js** files.\r 1. Launch your web using a local server like **Web Server for Chrome** or **Firebase server**.\r 1. Copy your **Instance ID Token**.\r 1. Send a push notification using Firebase **Notifications composer** option. See \"how to do it\" at original example, https://firebase.google.com/docs/cloud-messaging/js/first-message",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordisabadell/example-firebasecloudmessaging.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordisabadell/example-firebasecloudmessaging/issues"
+  },
+  "homepage": "https://github.com/jordisabadell/example-firebasecloudmessaging#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-template": "^5.0.0"
+  },
+  "dependencies": {
+    "gulp-dotenv": "^0.2.2",
+    "gulp-rename": "^2.0.0"
+  }
+}

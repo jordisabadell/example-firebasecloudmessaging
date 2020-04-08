@@ -1,5 +1,5 @@
 var firebaseConfig = {
-    apiKey: "<API_KEY>",
+    apiKey: '<%=FCM_WEBAPIKEY%>',
     authDomain: "example-firebasecloudmsg-2020.firebaseapp.com",
     databaseURL: "https://example-firebasecloudmsg-2020.firebaseio.com",
     projectId: "example-firebasecloudmsg-2020",
