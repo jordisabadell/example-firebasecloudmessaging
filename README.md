@@ -96,11 +96,11 @@ Body (*raw* type):
 }
 ```
 
-## Subscrive user to a topic using Postman
+## Subscribe user to a topic using Postman
 You'll need:
 - **Instance ID Token**: Token generated on your website through the *messaging.getToken()* function.
 - **Topic name**: whatever you want.
-- **Web API key**: Firebase > Project settings > General > Web API Key
+- **Server key**: Firebase > Project settings > Cloud Messaging > Server key
 
 URL call:
 ```
@@ -110,7 +110,7 @@ POST https://iid.googleapis.com/iid/v1/{your Instance ID token}/rel/topics/{Topi
 Headers:
 ```
 Content-Type: application/json
-Authorization: key={your Web API key}
+Authorization: key={your Server key}
 ```
 ## Send test messages to topic using Postman
 Like example 'Send a test message using Postman'. You only have to replace 'token' by 'topic' on *Body* message :
