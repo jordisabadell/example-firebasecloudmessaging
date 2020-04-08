@@ -39,3 +39,4 @@ firebase deploy
 ## Original examples
 - Set up a JavaScript Firebase Cloud Messaging client app https://firebase.google.com/docs/cloud-messaging/js/client
 - Send a test message to a backgrounded app https://firebase.google.com/docs/cloud-messaging/js/first-message
+- Send messages to multiple devices https://firebase.google.com/docs/cloud-messaging/js/send-multiple
