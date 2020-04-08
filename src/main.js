@@ -227,5 +227,18 @@ function hideDiv(divId) {
     div.style = 'display: none';
 }
 
+function copyToken() {
+    var token = document.querySelector('#token');
+    
+    //Create a temporal non visible textarea to copy token.
+    const textArea = document.createElement('textarea');
+    textArea.textContent = token.textContent;
+    textArea.style = "position: absolute;left: -100%;";
+    document.body.append(textArea);
+    textArea.select();
+    textArea.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+}
+
 // Reset UI on page load.
 resetUI();

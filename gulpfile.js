@@ -1,8 +1,7 @@
 var gulp = require('gulp');
-var dotenv = require('gulp-dotenv');
 const template = require('gulp-template');
 
-const { series } = require('gulp');
+const { watch, series } = require('gulp');
 
 require('dotenv').config();
 
@@ -18,7 +17,9 @@ function copy() {
 function build(cb) {
     console.log("Done!" + process.env.apikey);
     cb();
-  }
+}
   
-  exports.build = build;
-  exports.default = series(copy, build);
+exports.build = build;
+exports.default = function() {
+    watch('src/*', series(copy, build));
+}
