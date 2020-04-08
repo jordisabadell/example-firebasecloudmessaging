@@ -4,8 +4,12 @@
 Rename .env_EMPTY file to .env, and set FCM Web API key value (you'll get it on Firebase > Project settings > General > Web API Key).
 
 ## Project start
+Install dependencies:
 ```
 npm install
+```
+Launch server:
+```
 gulp
 ```
 ---
@@ -40,23 +44,23 @@ Maven configuration:
 Java main class:
 ```
 public static void main(String[] args) throws IOException {
-		FileInputStream privateKeyFile = new FileInputStream("c:/tmp/private_key.json");
-		
-		//OAuth 2.0 Scopes for Google APIs --> https://developers.google.com/identity/protocols/oauth2/scopes#fcmv1
-		String[] scopes = new String[] { 
-				"https://www.googleapis.com/auth/cloud-platform"
-		};
-				
-		GoogleCredential googleCredential = GoogleCredential
-			.fromStream(privateKeyFile)
-			.createScoped(Arrays.asList(scopes));
-		
-		googleCredential.refreshToken();
-		
-		String accessToken = googleCredential.getAccessToken();
-		
-		System.out.println(accessToken);
-	}
+  FileInputStream privateKeyFile = new FileInputStream("c:/tmp/private_key.json");
+
+  //OAuth 2.0 Scopes for Google APIs --> https://developers.google.com/identity/protocols/oauth2/scopes#fcmv1
+  String[] scopes = new String[] { 
+    "https://www.googleapis.com/auth/cloud-platform"
+  };
+
+  GoogleCredential googleCredential = GoogleCredential
+    .fromStream(privateKeyFile)
+    .createScoped(Arrays.asList(scopes));
+
+  googleCredential.refreshToken();
+
+  String accessToken = googleCredential.getAccessToken();
+
+  System.out.println(accessToken);
+}
 ```
 You'll get something like *ya29.c.Ko8Bx******FyD4OM*
 
@@ -125,7 +129,7 @@ Like example 'Send a test message using Postman'. You only have to replace 'toke
 
 ---
 
-## Configure Local Server
+## Alternatives local servers
 
 ### Web Server for Chrome
 https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb
@@ -147,7 +151,7 @@ firebase serve -p 8081
 ``` 
 Open [http://localhost:8081](http://localhost:8081).
 
-## Deploy on Google hosting server
+## Google hosting server
 After install and initialize Firebase project, execute the next command to deploy on Firebase hosting.
 ```
 firebase deploy
