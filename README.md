@@ -31,7 +31,8 @@ Steps:
 
 ### 1. Get Access token
 #### 1.1. Generate Private key
-Go to Firebase > Project settings > Service accounts > Generate new private key
+- Go to Firebase > Project settings > Service accounts > Generate new private key
+- Rename file to "*private_key.json*" and move to *c:/tmp*
 
 #### 1.2. Generate Access token (using Java)
 Maven configuration:
