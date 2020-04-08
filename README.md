@@ -1,7 +1,8 @@
 # Firebase Cloud Notification example
 
 ## Project configuration
-Rename .env_EMPTY file to .env, and set FCM Web API key value (you'll get it on Firebase > Project settings > General > Web API Key).
+- Rename *.env_EMPTY* file to *.env*
+- Set FCM web API key value. You'll get on Firebase > Project settings > General > Web API Key.
 
 ## Project start
 Install dependencies:
