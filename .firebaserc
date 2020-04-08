@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "example-firebasecloudmsg-2020",
+    "staging": "example-firebasecloudmsg-2020"
+  }
+}
