@@ -18,7 +18,6 @@ function copy() {
 }
 
 function build(cb) {
-    console.log("Done! " + process.env.FCM_SERVERKEY) 
     cb();
 }
   
