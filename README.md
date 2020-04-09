@@ -91,7 +91,12 @@ Body (*raw* type):
     "notification": {
       "title": "Test message",
       "body": "This is a test message from FCM."
-    }    
+    },
+    "webpush": {
+      "fcm_options": {
+        "link": "https://www.kilometresolidari.cat"
+      }
+    }
   }
 }
 ```
