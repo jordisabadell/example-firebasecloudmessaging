@@ -38,7 +38,7 @@ messaging.onTokenRefresh(() => {
 // - the user clicks on an app notification created by a service worker
 //   `messaging.setBackgroundMessageHandler` handler.
 messaging.onMessage((payload) => {
-    console.log('Message received! ', payload);
+    console.log('Message foreground received! ', payload);
 
     // Update the UI to include the received message.
     appendMessage(payload);
@@ -211,7 +211,7 @@ function showPushPermissionRequired() {
  * @param {*} payload 
  */
 function appendMessage(payload) {
-    
+
     const messagesElement = document.querySelector('#messages');
     const dataHeaderELement = document.createElement('h5');
     const dataElement = document.createElement('pre');
